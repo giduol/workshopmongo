@@ -1,4 +1,4 @@
-package com.example.workshopmongo.resources.Exceptions;
+package com.example.workshopmongo.controller.Exceptions;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

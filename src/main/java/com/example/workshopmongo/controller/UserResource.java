@@ -1,4 +1,4 @@
-package com.example.workshopmongo.resources;
+package com.example.workshopmongo.controller;
 
 import com.example.workshopmongo.domain.User;
 import com.example.workshopmongo.dto.UserDTO;
@@ -18,20 +18,20 @@ public class UserResource {
     @Autowired
     private UserService service;
 
-    @RequestMapping(method = RequestMethod.GET)
+    @GetMapping
     public ResponseEntity<List<UserDTO>> findAll() {
         List<User> users = service.findAll();
         List<UserDTO> userDTOs = users.stream().map(UserDTO::new).toList();
         return ResponseEntity.ok().body(userDTOs);
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    @GetMapping(value = "/{id}")
     public ResponseEntity<UserDTO> findById(@PathVariable String id) {
         User user = service.findById(id);
         return ResponseEntity.ok().body(new UserDTO(user));
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+    @PostMapping
     public ResponseEntity<UserDTO> insert(@RequestBody UserDTO objDto) {
         User obj = service.fromDTO(objDto);
         obj = service.insert(obj);
@@ -39,13 +39,13 @@ public class UserResource {
         return ResponseEntity.created(uri).body(new UserDTO(obj));
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    @DeleteMapping(value = "/{id}")
     public ResponseEntity<Void> delete(@PathVariable String id) {
         service.delete(id);
         return ResponseEntity.noContent().build();
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
+    @PutMapping(value = "/{id}")
     public ResponseEntity<UserDTO> update(@RequestBody UserDTO objDto, @PathVariable String id) {
         User obj = service.fromDTO(objDto);
         obj.setId(id);
