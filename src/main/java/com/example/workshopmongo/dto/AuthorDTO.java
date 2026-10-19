@@ -3,10 +3,12 @@ package com.example.workshopmongo.dto;
 import com.example.workshopmongo.domain.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
 @AllArgsConstructor
+@NoArgsConstructor
 @Data
 public class AuthorDTO implements Serializable {
 
