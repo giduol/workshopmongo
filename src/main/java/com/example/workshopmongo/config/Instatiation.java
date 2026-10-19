@@ -2,6 +2,7 @@ package com.example.workshopmongo.config;
 
 import com.example.workshopmongo.domain.Post;
 import com.example.workshopmongo.domain.User;
+import com.example.workshopmongo.dto.AuthorDTO;
 import com.example.workshopmongo.repositories.PostRepository;
 import com.example.workshopmongo.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,8 +36,8 @@ public class Instatiation implements CommandLineRunner {
 
         userRepository.saveAll(Arrays.asList(maria, alex, bob));
 
-        Post post1 = new Post(null, sdf.parse("21/03/2018"), "Partiu viajar", "Vou viajar para São Paulo. Abraços!", maria);
-        Post post2 = new Post(null, sdf.parse("21/03/2018"), "Bom dia", "Acordei feliz hoje!", maria);
+        Post post1 = new Post(null, sdf.parse("21/03/2018"), "Partiu viajar", "Vou viajar para São Paulo. Abraços!", new AuthorDTO(maria));
+        Post post2 = new Post(null, sdf.parse("21/03/2018"), "Bom dia", "Acordei feliz hoje!", new AuthorDTO(maria));
 
         postRepository.saveAll(Arrays.asList(post1, post2));
     }
