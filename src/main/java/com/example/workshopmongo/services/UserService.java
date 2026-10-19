@@ -16,4 +16,8 @@ public class UserService {
     public List<User> findAll() {
         return repo.findAll();
     }
+
+    public User findById(String id) {
+        return repo.findById(id).orElseThrow(() -> new ObjectNotFoundException("User not found"));
+    }
 }
