@@ -4,6 +4,7 @@ import com.example.workshopmongo.dto.AuthorDTO;
 import com.example.workshopmongo.dto.CommentDTO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -13,6 +14,7 @@ import java.util.Date;
 import java.util.List;
 
 @AllArgsConstructor
+@NoArgsConstructor
 @Data
 @Document(collection = "post")
 public class Post implements Serializable {
