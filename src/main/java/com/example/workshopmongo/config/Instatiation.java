@@ -26,10 +26,6 @@ public class Instatiation implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        System.out.println(
-                "MONGODB_URI definida: " + (System.getenv("MONGODB_URI"))
-        );
-
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         sdf.setTimeZone(TimeZone.getTimeZone("GMT"));
 
