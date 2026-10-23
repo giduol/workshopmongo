@@ -1,6 +1,5 @@
 spring:
   application:
     name: workshopmongo
-  data:
-    mongodb:
-      uri: ${MONGODB_URI}
+  mongodb:
+    uri: ${MONGODB_URI}
