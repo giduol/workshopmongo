@@ -9,13 +9,10 @@ import com.example.workshopmongo.repositories.PostRepository;
 import com.example.workshopmongo.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.boot.SpringApplication;
 import org.springframework.context.annotation.Configuration;
-
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.TimeZone;
-import org.springframework.context.ConfigurableApplicationContext;
 
 @Configuration
 public class Instatiation implements CommandLineRunner {
@@ -30,18 +27,7 @@ public class Instatiation implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
         System.out.println(
-                "MONGODB_URI definida: " +
-                        (System.getenv("MONGODB_URI") != null)
-        );
-
-        ConfigurableApplicationContext context =
-                SpringApplication.run(WorkshopmongoApplication.class, args);
-
-        System.out.println(
-                "URI do Spring: " +
-                        context.getEnvironment()
-                                .getProperty("spring.data.mongodb.uri", "NAO DEFINIDA")
-                                .replaceAll("://[^/@]+@", "://***@")
+                "MONGODB_URI definida: " + (System.getenv("MONGODB_URI"))
         );
 
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
