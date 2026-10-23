@@ -4,3 +4,9 @@ spring:
   data:
     mongodb:
       uri: ${MONGODB_URI}
+
+logging:
+  level:
+    org.springframework.boot.context.config: DEBUG
+    org.springframework.data.mongodb: DEBUG
+    org.mongodb.driver.client: DEBUG
